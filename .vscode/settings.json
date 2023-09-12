@@ -1,0 +1,11 @@
+{
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+    "cmake.configureOnOpen": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "emmet.includeLanguages": {
+      "django-html": "html"
+    },
+  }

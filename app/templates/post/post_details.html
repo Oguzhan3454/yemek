@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+<title>{{post.title}} | Yemek</title>
+{% endblock title %}
+{% block content%}
+<div class="container mt-5">
+  <div class="card" style="width: 60rem; margin-left:auto; margin-right:auto;">
+    <img src="/media/{{post.image}}" class="card-img-top" alt="{{post.title}}">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.content}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{post.history}}</li>
+    </ul>
+  </div>
+</div>
+{% endblock content %}

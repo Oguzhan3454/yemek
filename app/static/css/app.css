@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'dPoppins', sans-serif;
+}
+
+.nav_menu{
+    background: url('/static/images/background.jpg');
+    width: 100%;
+    object-fit: contain;
+}
+
+.nav-link:hover {
+    font-weight: 600;
+    transition: all ease-in-out .5s;
+}
+
+.nav-link.active {
+    border: 2px;
+    border-radius: 50px;
+    color: white !important;
+}
+
+.navbar-nav{
+    color: white;
+}
+
+.navbar-nav .nav-item {
+    /*background-color: rgb(63, 163, 240);*/
+    border-radius: 15px; /* İstediğiniz bir köşe yuvarlatma değeri verin */
+    margin: 5px; /* İtemler arasındaki boşluğu ayarlayabilirsiniz */
+    padding: 5px 5px; /* İtem içeriğinin içeridenki boşluğunu ayarlayabilirsiniz */
+}

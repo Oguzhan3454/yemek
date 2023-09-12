@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+<title>Yöresel Lezzetler | Yemek</title>
+{% endblock title %}
+{% block content %}
+<form method="GET" action="{% url 'food_post' %}">
+    {% csrf_token %}
+<div class="container mt-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Yemek" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" value="ALL">
+            <button class="btn btn-warning" type="submit" id="button-addon2">Ara</button>
+        </div>
+        <select name="city_filter" class="form-select" aria-label="Default select example">
+            <option value="ALL">HEPSİ</option>
+            {% for value, label in form.city.field.choices %}
+                        <option value="{{ value }}" style="color: black;">{{ label }}</option>
+            {% endfor %}
+          </select>
+    </form>
+    <hr>
+</div>
+{% for post in page_obj %}
+<div class="container" style="margin-left: 305px;">
+    <div class="card mb-3" style="max-width: 640px; margin-top: 50px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <a href="{% url 'post_details' post.id %}">
+                <img src="/media/{{ post.image }}" class="img-fluid rounded-start" alt="{{post.title}}">
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.content}}</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
